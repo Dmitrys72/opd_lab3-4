@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Решение квадратного уравнения</title>
+</head>
+<body>
+  <h1>Решение квадратного уравнения</h1>
+  <form action="/" method="post">
+    <label for="a">Коэффициент a:</label>
+    <input type="text" name="a" id="a">
+    <br>
+    <label for="b">Коэффициент b:</label>
+    <input type="text" name="b" id="b">
+    <br>
+    <label for="c">Коэффициент c:</label>
+    <input type="text" name="c" id="c">
+    <br>
+    <input type="submit" value="Решить">
+  </form>
+
+  {% if result %}
+    <h2>Корни уравнения:</h2>
+    <ul>
+    {% for root in result %}
+        <li>{{ root }}</li>
+    {% endfor %}
+    </ul>
+  {% elif error %}
+    <h2>{{ error }}</h2>
+  {% endif %}
+</body>
+</html>
